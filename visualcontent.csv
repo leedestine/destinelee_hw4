@@ -1,0 +1,9 @@
+id,name,short_name,file_type,css_class,article_id
+2,video1.mp4,video1,mp4,wc-video,2
+3,h2.png,h2,png,wc-article-image,3
+4,h3.png,h3,png,wc-article-image,4
+5,h4.png,h4,png,wc-article-image,5
+6,h5.png,h5,png,wc-article-image,6
+7,h6.png,h6,png,wc-article-image,7
+8,h7.png,h7,png,wc-article-image,8
+9,h8.png,h8,png,wc-article-image,9

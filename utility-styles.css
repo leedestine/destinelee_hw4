@@ -1,0 +1,124 @@
+/* Utility Styles */
+
+/* Flexbox utilities */
+.flex {
+    display: flex;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Margin utilities */
+.margin-0 {
+    margin: 0;
+}
+.margin-1 {
+    margin: 4px;
+}
+.margin-2 {
+    margin: 8px;
+}
+.margin-3 {
+    margin: 12px;
+}
+.margin-auto {
+    margin: auto;
+}
+
+/* Padding utilities */
+.padding-0 {
+    padding: 0;
+}
+.padding-1 {
+    padding: 4px;
+}
+.padding-2 {
+    padding: 8px;
+}
+.padding-3 {
+    padding: 12px;
+}
+.padding-auto {
+    padding: auto;
+}
+
+/* Color utilities */
+.text-blue {
+    color: blue;
+}
+.text-white {
+    color: white;
+}
+.text-gray {
+    color: gray;
+}
+.bg-blue {
+    background-color: blue;
+}
+.bg-white {
+    background-color: white;
+}
+.bg-gray {
+    background-color: gray;
+}
+
+/* Width & Height Utilities */
+.w-100 {
+    width: 100%;
+}
+.h-100 {
+    height: 100%;
+}
+.max-w-50 {
+    max-width: 50%;
+}
+.max-h-50 {
+    max-height: 50%;
+}
+
+/* Text utilities */
+.text-center {
+    text-align: center;
+}
+.text-bold {
+    font-weight: bold;
+}
+.text-italic {
+    font-style: italic;
+}
+
+/* Border utilities */
+.border {
+    border: 1px solid #ccc;
+}
+.border-none {
+    border: none;
+}
+.border-radius {
+    border-radius: 5px;
+}
+
+/* Display utilities */
+.hidden {
+    display: none;
+}
+.block {
+    display: block;
+}
+.inline-block {
+    display: inline-block;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kim Sae Ron’s K-Drama Co-Star Mourns</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility-styles.css">
+    <link rel="stylesheet" href="article1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/logokeery.png" alt="KEERY Logo"></a>
+        </div>
+        <div class="menu1">
+            <!-- Hamburger Toggle using Font Awesome -->
+            <a href="article1.html" class="menubut">
+                <button class="menu2">
+                    <i class="fa-solid fa-bars"></i> <!-- Font Awesome Hamburger Icon -->
+                </button>
+            </a>
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Sign In</a></li>
+                <li>
+                     <!-- Search Button using Font Awesome -->
+                    <div class="search-container">
+                        <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i> Search</button> <!-- Font Awesome Search Icon -->
+                        <input type="text" class="search-input" placeholder="Type to search...">
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    <main>
+        <article class="article">
+            <h1>Kim Sae Ron’s K-Drama Co-Star-Turned-Bestie Mourns With Never-Before-Seen Pictures of The Late Actress</h1>
+            <p class="wc-article-meta">Published on February 22, 2025 by KEERY K-Pop News Portal</p>
+            
+            <img src="images/h1.png" alt="Kim Sae Ron with her best friend" class="articleimage">
+            <p class="image-caption">Kim Sae Ron and Lee Young Yoo sharing a heartfelt moment.</p>
+            
+            <p>Actress Lee Young Yoo, who debuted in 2003 as a part of the children’s group 7Princess, grieved the loss 
+                of her best friend, actress Kim Sae Ron, with an Instagram post of never-before-seen pictures of the two 
+                together.
+            </p>
+            <p>Referring to the late actress as her “husband, heart, other half, and life,” Lee Young Yoo wrote, 
+                “I’m sorry I couldn’t protect you.” In her heartbreaking note, she highlighted what a “radiant” person 
+                Kim Sae Ron was.
+            </p>
+            
+            <img src="images/h1a1.png" alt="Lee Young Yoo's Instagram tribute" class="articleimage">
+            <p class="imagecapt">Lee Young Yoo shared a heartfelt tribute on Instagram.<a href="https://www.instagram.com/p/DGR6cTpyRoj/?img_index=1"> view more on Instagram </a></p>
+            
+            <p> "My eternal husband, my heart, my other half, my very life—my dearest Ron. I was so blessed to have you 
+                in my life. You made it so radiant and full of colors. You kept giving and giving and still felt bad 
+                that you couldn’t offer more… I have never received such unconditional love before I met you. 
+                You’re the one who taught me what it’s like to be loved like that. Thank you, thank you, and thank you again. 
+                I miss you so much, but if this means you’re no longer in pain, then that’s enough for me. 
+                I’m sorry I couldn’t protect you. I miss you, my baby sis. I love you so much. ❤️" </p>
+            <p class="author">- Lee Young Yoo</p>
+            
+            <p>More exclusive photos and tributes from the actress's close friends can be viewed here:</p>
+            <p><a href="#">Popular K-Pop Idol Grieves The Loss Of The Late Kim Sae Ron</a></p>
+                 
+    <!-- Comment Section -->
+                  <h2>Comments</h2>
+
+                  <form class="comment1" id="commentForm">
+                      <textarea id="commentInput" placeholder="Write a comment..." required></textarea>
+                      <button type="submit">Post Comment</button>
+                  </form>
+                  
+                  <div id="commentList">
+                      <div class="comment">
+                          <div class="commenthead">
+                              <img src="images/prof1.png" alt="User Profile" class="commentprof">
+                              <p class="commentaut">@MomoKpop</p>
+                          </div>
+                          <p class="commenttxt">Such a heartbreaking loss. She will always be remembered.</p>
+                      </div>
+                  
+                      <div class="comment">
+                          <div class="commenthead">
+                              <img src="images/prof2.png" alt="User Profile" class="commentprof">
+                              <p class="commentaut">@KDramaFan89</p>
+                          </div>
+                          <p class="commenttxt">Her legacy will live on through her work and the people who love her.</p>
+                      </div>
+                  </div>
+                  
+                  <!-- Add this script before closing </body> -->
+                  <script>
+                      document.addEventListener("DOMContentLoaded", function () {
+                          const form = document.getElementById("commentForm");
+                          const input = document.getElementById("commentInput");
+                          const commentList = document.getElementById("commentList");
+                  
+                          form.addEventListener("submit", function (e) {
+                              e.preventDefault(); // Prevent form from reloading the page
+                  
+                              const commentText = input.value.trim();
+                              if (commentText === "") return;
+                  
+                              // Create a new comment block
+                              const newComment = document.createElement("div");
+                              newComment.classList.add("comment");
+                              newComment.innerHTML = `
+                                  <div class="commenthead">
+                                      <img src="images/defaultuser.png" alt="User Profile" class="commentprof">
+                                      <p class="commentaut">@GuestUser</p>
+                                  </div>
+                                  <p class="commenttxt">${commentText}</p>
+                              `;
+                  
+                              // Add new comment at the top of the list
+                              commentList.prepend(newComment);
+                  
+                              // Clear textarea
+                              input.value = "";
+                          });
+                      });
+                  </script>
+                  

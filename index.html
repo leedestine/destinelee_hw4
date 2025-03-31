@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>KEERY - KPOP NEWS PORTAL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility-styles.css">
+    <link rel="stylesheet" href="article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/logokeery.png" alt="KEERY Logo"></a>
+        </div>
+        <div class="menu1">
+            <a href="article1.html" class="menubut">
+                <button class="menu2"><i class="fa-solid fa-bars"></i></button>
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Sign In</a></li>
+                <li>
+                    <div class="search-container">
+                        <form action="/search.html" method="GET">
+                            <input type="text" name="query" class="search-input" placeholder="Search..." required>
+                            <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <img src="images/h1.png" alt="Breaking News">
+            <h1><a href="article1.html">Breaking News: Korean Stars Mourn the Passing of Kim Sae Ron</a></h1>
+            <h2>“I miss you so much, but if this means you’re no longer in pain, then that’s enough for me.”</h2>
+        </div>
+     <article>
+        <img src="images/h2.png" alt="“Single’s Inferno 4” Chung You Jin Reveals...">
+        <h2><a href="article.html">Single’s Inferno 4” Chung You Jin Reveals...</a></h2>
+        <p>She had not been drunk.</p>
+        <button class="like-btn">Like ❤️</button>
+    </article>
+    <article>
+        <img src="images/h3.png" alt="Park Bom’s Absence From 2NE1...">
+        <h2><a href="article.html">Park Bom’s Absence From 2NE1...</a></h2>
+        <p>Fans are questioning whether this is related to Park’s ongoing controversy.</p>
+        <button class="like-btn">Like ❤️</button>
+    </article>
+    <article>
+        <img src="images/h4.png" alt="Legendary Idol Admits To Facing Financial...">
+        <h2><a href="article.html">Legendary Idol Admits To Facing Financial...</a></h2>
+        <p>“I truly hit rock bottom.”</p>
+        <button class="like-btn">Like ❤️</button>
+    </article>
+    <article>
+        <img src="images/h5.png" alt="Popular Actor’s Shocking View On Marriage...">
+        <h2><a href="article.html">Popular Actor’s Shocking View On Marriage...</a></h2>
+        <p>He had a surprising stance on marriage and having children.</p>
+        <button class="like-btn">Like ❤️</button>
+    </article>
+    <article>
+        <img src="images/h6.png" alt="Popular Actress Tries K-Pop Poses...">
+        <h2><a href="article.html">Popular Actress Tries K-Pop Poses...</a></h2>
+        <p>She had enough of the finger hearts.</p>
+        <button class="like-btn">Like ❤️</button>
+    </article>
+    <article>
+        <img src="images/h7.png" alt="HYBE Bang Si Hyuk’s Recent Photo With TXT Sparks ...">
+        <h2><a href="article.html">HYBE Bang Si Hyuk’s With TXT Sparks Viral Criticism...</a></h2>
+        <p>He congratulated TXT on their recent activities.                </p>
+        <button class="like-btn">Like ❤️</button>
+    </article>
+    <article>
+        <img src="images/h8.png" alt="Meet 18-Year-Old Prince Hisahito, Who Could...">
+        <h2><a href="article.html">Meet 18-Year-Old Prince Hisahito, Who Could...</a></h2>
+        <p>He recently held his first press conference.                 </p>
+        <button class="like-btn">Like ❤️</button>
+    </article>
+</div>
+</main>
+
+    <footer>
+        <p>&copy; KEERY K-Pop News Portal 2025</p>
+    </footer>
+
+    <script>
+        const likeButtons = document.querySelectorAll('.like-btn');
+
+        likeButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                if (button.textContent.includes('Like')) {
+                    button.textContent = 'Liked ❤️';
+                } else {
+                    button.textContent = 'Like ❤️';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

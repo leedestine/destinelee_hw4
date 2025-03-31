@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Search Results - KEERY KPOP NEWS PORTAL</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility-styles.css">
+    <link rel="stylesheet" href="article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/logokeery.png" alt="KEERY Logo"></a>
+        </div>
+        <nav class="menu1">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Sign In</a></li>
+                <li>
+                    <div class="search-container">
+                        <form action="search.html" method="GET"> <!-- FIXED: must point to this file -->
+                            <input type="text" name="query" class="search-input" placeholder="Search..." required>
+                            <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Search Results</h1>
+        <div id="searchResults" class="news-grid">
+            <!-- Search results will be displayed here dynamically -->
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; KEERY K-Pop News Portal 2025 | <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <!-- PapaParse CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get("query")?.toLowerCase().trim() || "";
+            const searchInput = document.querySelector("input[name='query']");
+            const searchResultsContainer = document.getElementById("searchResults");
+
+            if (searchInput && query) {
+                searchInput.value = query;
+            }
+
+            Papa.parse("/data/articles.csv", {
+                download: true,
+                header: true,
+                skipEmptyLines: true,
+                complete: function (results) {
+                    const data = results.data;
+
+                    if (!query) {
+                        searchResultsContainer.innerHTML = "<p>Please enter a search term.</p>";
+                        return;
+                    }
+
+                    const filtered = data.filter(item =>
+                        item.title?.toLowerCase().includes(query) ||
+                        item.description?.toLowerCase().includes(query) ||
+                        item.content?.toLowerCase().includes(query)
+                    );
+
+                    if (filtered.length === 0) {
+                        searchResultsContainer.innerHTML = `<p>No results found for "${query}".</p>`;
+                        return;
+                    }
+
+                    searchResultsContainer.innerHTML = "";
+                    filtered.forEach(article => {
+                        const mediaHTML = article.image
+                            ? `<img src="/images/${article.image}" alt="${article.title}" class="search-thumbnail">`
+                            : "";
+
+                        const articleHTML = `
+                            <article class="search-result-item">
+                                ${mediaHTML}
+                                <div class="search-result-text">
+                                    <h2><a href="/articles/?wc_id=${article.id}">${article.title}</a></h2>
+                                    <p>${article.description}</p>
+                                    <small>Published on: ${article.date}</small>
+                                </div>
+                            </article>
+                        `;
+                        searchResultsContainer.innerHTML += articleHTML;
+                    });
+                },
+                error: function (error) {
+                    console.error("Error loading CSV:", error);
+                    searchResultsContainer.innerHTML = "<p>Error loading search results.</p>";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
